@@ -1,44 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Corazón JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazón Latiente</title>
     <style>
         body {
-            background-color: black;
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            background-color: black;
+            overflow: hidden;
         }
 
-        canvas {
-            border: 2px solid red; /* Para ver el borde del canvas */
+        .heart {
+            width: 200px; /* Ajusta el tamaño según sea necesario */
+            height: 200px; /* Ajusta el tamaño según sea necesario */
+            background-image: url('heart.png'); /* Asegúrate de que la imagen esté en el mismo directorio */
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: heartbeat 1s infinite;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Brillo inicial */
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* Brillo más intenso */
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            }
         }
     </style>
 </head>
 <body>
-    <canvas id="heartCanvas" width="200" height="200"></canvas>
-
-    <script>
-        const canvas = document.getElementById('heartCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // Función para dibujar el corazón
-        function drawHeart(ctx, x, y, width, height) {
-            ctx.save();
-            ctx.translate(x, y);
-            ctx.beginPath();
-            ctx.moveTo(width / 2, height / 5);
-            ctx.bezierCurveTo(width, 0, width, height / 2, width / 2, height);
-            ctx.bezierCurveTo(0, height / 2, 0, 0, width / 2, height / 5);
-            ctx.fillStyle = 'red';
-            ctx.fill();
-            ctx.restore();
-        }
-
-        // Dibuja el corazón en el centro del canvas
-        drawHeart(ctx, canvas.width / 2, canvas.height / 2, 100, 100);
-    </script>
+    <div class="heart"></div>
 </body>
 </html>
