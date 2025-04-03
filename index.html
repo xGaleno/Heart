@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corazón Latiente</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: black;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazón Latiente</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            overflow: hidden;
+        }
 
-    .heart {
-      position: relative;
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      transform: rotate(45deg);
-      animation: heartbeat 1s infinite;
-      border-radius: 50%;
-      box-shadow: 0 0 15px 5px red;
-    }
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transform: rotate(45deg);
+            animation: heartbeat 1s infinite;
+        }
 
-    .heart:before,
-    .heart:after {
-      content: '';
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      border-radius: 50%;
-    }
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
 
-    .heart:before {
-      left: 50px;
-      top: 0;
-    }
+        .heart::before {
+            left: -50px;
+            top: 0;
+        }
 
-    .heart:after {
-      top: 50px;
-      left: 0;
-    }
+        .heart::after {
+            top: 0;
+            left: 0;
+        }
+        .heart{
+            background-color: transparent;
+        }
 
-    @keyframes heartbeat {
-      0% {
-        transform: rotate(45deg) scale(1);
-        box-shadow: 0 0 15px 5px red;
-      }
-      50% {
-        transform: rotate(45deg) scale(1.2);
-        box-shadow: 0 0 25px 10px red;
-      }
-      100% {
-        transform: rotate(45deg) scale(1);
-        box-shadow: 0 0 15px 5px red;
-      }
-    }
-  </style>
+        @keyframes heartbeat {
+            0% {
+                transform: rotate(45deg) scale(1);
+                box-shadow: 0 0 15px 5px red;
+            }
+            50% {
+                transform: rotate(45deg) scale(1.2);
+                box-shadow: 0 0 25px 10px red;
+            }
+            100% {
+                transform: rotate(45deg) scale(1);
+                box-shadow: 0 0 15px 5px red;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="heart"></div>
+    <div class="heart"></div>
 </body>
 </html>
