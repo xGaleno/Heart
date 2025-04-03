@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corazón Latiente con Imagen</title>
+    <title>Corazón Centrado</title>
     <style>
         body {
             margin: 0;
@@ -18,26 +18,9 @@
         .heart {
             width: 200px; /* Ajusta el tamaño según sea necesario */
             height: auto;
-            background-image: url('heart.png');
+            background-image: url('heart.png'); /* Ruta corregida */
             background-size: contain;
             background-repeat: no-repeat;
-            animation: heartbeat 1s infinite;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Brillo inicial */
-        }
-
-        @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-            }
-            50% {
-                transform: scale(1.1);
-                box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* Brillo más intenso */
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-            }
         }
     </style>
 </head>
