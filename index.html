@@ -16,45 +16,26 @@
         }
 
         .heart {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            transform: rotate(45deg);
+            width: 200px; /* Ajusta el tamaño según sea necesario */
+            height: 200px; /* Ajusta el tamaño según sea necesario */
+            background-image: url('heart.png'); /* Asegúrate de que la imagen esté en el mismo directorio */
+            background-size: contain;
+            background-repeat: no-repeat;
             animation: heartbeat 1s infinite;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            border-radius: 50%;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Brillo inicial */
-        }
-
-        .heart::before {
-            left: -50px;
-            top: 0;
-        }
-
-        .heart::after {
-            top: 0;
-            left: 0;
         }
 
         @keyframes heartbeat {
             0% {
-                transform: rotate(45deg) scale(1);
+                transform: scale(1);
                 box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             }
             50% {
-                transform: rotate(45deg) scale(1.2);
+                transform: scale(1.1);
                 box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* Brillo más intenso */
             }
             100% {
-                transform: rotate(45deg) scale(1);
+                transform: scale(1);
                 box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             }
         }
