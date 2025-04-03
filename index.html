@@ -13,6 +13,7 @@
             align-items: center;
             background-color: black;
             overflow: hidden;
+            flex-direction: column;
         }
 
         .heart {
@@ -39,9 +40,21 @@
                 filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
             }
         }
+
+        .text {
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Importando fuente para la letra bonita */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
     </style>
 </head>
 <body>
     <div class="heart"></div>
+    <p class="text">Mi corazón late por ti martineishon</p>
 </body>
 </html>
