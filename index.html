@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corazón Latiente</title>
+    <title>Corazón Latiente con Imagen</title>
     <style>
         body {
             margin: 0;
@@ -16,48 +16,27 @@
         }
 
         .heart {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            transform: rotate(45deg);
+            width: 200px; /* Ajusta el tamaño según sea necesario */
+            height: auto;
+            background-image: url('heart.png');
+            background-size: contain;
+            background-repeat: no-repeat;
             animation: heartbeat 1s infinite;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            border-radius: 50%;
-        }
-
-        .heart::before {
-            left: -50px;
-            top: 0;
-        }
-
-        .heart::after {
-            top: 0;
-            left: 0;
-        }
-        .heart{
-            background-color: transparent;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Brillo inicial */
         }
 
         @keyframes heartbeat {
             0% {
-                transform: rotate(45deg) scale(1);
-                box-shadow: 0 0 15px 5px red;
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             }
             50% {
-                transform: rotate(45deg) scale(1.2);
-                box-shadow: 0 0 25px 10px red;
+                transform: scale(1.1);
+                box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* Brillo más intenso */
             }
             100% {
-                transform: rotate(45deg) scale(1);
-                box-shadow: 0 0 15px 5px red;
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             }
         }
     </style>
